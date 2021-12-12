@@ -50,7 +50,7 @@ public class ProductoController {
         return ResponseEntity.status(201).build();
     }
     
-    @PutMapping("/save")
+    @PutMapping("/update")
     public ResponseEntity editProducto(@RequestBody Producto producto){
         service.updateProducto(producto);
         return ResponseEntity.status(201).build();

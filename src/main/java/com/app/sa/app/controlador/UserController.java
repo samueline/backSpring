@@ -48,7 +48,7 @@ public class UserController {
         return ResponseEntity.status(201).build();
     }
     
-    @PutMapping("/save")
+    @PutMapping("/update")
     public ResponseEntity editUser(@RequestBody User user){
         service.updateUser(user);
         return ResponseEntity.status(201).build();
@@ -58,6 +58,15 @@ public class UserController {
     public ResponseEntity deleteUser(@PathVariable Integer id){
         service.deleteUser(id);
         return ResponseEntity.status(204).build();
+    }
+     @GetMapping("/emailexist/{email}")
+    public boolean verification(@PathVariable("email")String email){
+        return service.getUserByEmail(email);
+    }
+
+    @GetMapping("/{email}/{password}")
+    public User authUser(@PathVariable("email")String email, @PathVariable("password")String password){
+        return service.authUser(email, password);
     }
     
 }
