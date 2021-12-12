@@ -66,7 +66,7 @@ public class UserController {
 
     @GetMapping("/{email}/{password}")
     public User authUser(@PathVariable("email")String email, @PathVariable("password")String password){
-        return service.authUser(email, password);
+        return (User)service.getAll();
     }
     
 }

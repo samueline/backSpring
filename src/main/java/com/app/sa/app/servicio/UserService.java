@@ -7,10 +7,11 @@ package com.app.sa.app.servicio;
 import com.app.sa.app.entidad.User;
 import com.app.sa.app.repositorio.UserRepository;
 import java.util.List;
-import java.util.Optional;
+
+//import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.stereotype.Repository;
+
 /**
  *
  * @author samue
@@ -69,15 +70,7 @@ public class UserService {
         return repository.findByEmail(email);
     }
 
-    public User authUser(String email, String password){
-        Optional<User> user = repository.authUser(email, password);
-
-        if (!user.isEmpty()){
-            return new User();
-        }else {
-            return user.get();
-        }
-    }
+    
 
     
     }

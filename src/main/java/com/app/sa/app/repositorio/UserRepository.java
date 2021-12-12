@@ -14,7 +14,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  */
 public interface UserRepository extends MongoRepository<User,Integer>{
        public boolean findByEmail(String email);
-       Optional<User> authUser(String email, String password);
+       //Optional<User> authUser(String email, String password);
   //  public Optional<User> authUser(String email, String password);
 
 
