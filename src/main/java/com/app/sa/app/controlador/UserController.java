@@ -37,10 +37,10 @@ public class UserController {
         return service.getAll();
     }
     
-//    @GetMapping("/{id}")
-//    public Producto findProducto(@PathVariable String id){
-//        return service.getUser(id);
-//    }
+    @GetMapping("/{id}")
+    public User findUser(@PathVariable Integer id){
+        return service.getUser(id);
+   }
     
     @PostMapping("/new")
     public ResponseEntity addUser(@RequestBody User user){
@@ -54,11 +54,11 @@ public class UserController {
         return ResponseEntity.status(201).build();
     }
     
-    @DeleteMapping("/{id}")
-    public ResponseEntity deleteUser(@PathVariable Integer id){
-        service.deleteUser(id);
-        return ResponseEntity.status(204).build();
-    }
+//    @DeleteMapping("/{id}")
+//    public ResponseEntity deleteUser(@PathVariable Integer id){
+//        service.deleteUser(id);
+//        return ResponseEntity.status(204).build();
+//    }
      @GetMapping("/emailexist/{email}")
     public boolean verification(@PathVariable("email")String email){
        

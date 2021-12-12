@@ -54,7 +54,7 @@ public class OrderController {
         service.updateOrder(order);
         return ResponseEntity.status(201).build();
     }
-    @GetMapping("/zone/{ZONA}")
+    @GetMapping("/zona/{ZONA}")
     public List<Orders> findOrderUser(@PathVariable String ZONA){
         return service.getOrderCustomer(ZONA);
     }
