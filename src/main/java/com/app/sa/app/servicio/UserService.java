@@ -34,13 +34,10 @@ public class UserService {
 
     // this method will save a new user
     public User save(User user){
-        if (user.getId() == null){
             
                 return repository.save(user);
             
-        }else {
-            return user;
-        }
+      
     }
 
     // This method will to look if an user exist on the system by its email
@@ -67,7 +64,8 @@ public class UserService {
     }     
     
  public boolean getUserByEmail(String email){
-        return repository.findByEmail(email);
+      
+     return true;
     }
 
     

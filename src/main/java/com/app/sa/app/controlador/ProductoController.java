@@ -44,7 +44,7 @@ public class ProductoController {
 //        return service.getProducto(id);
 //    }
     
-    @PostMapping("/save")
+    @PostMapping("/new")
     public ResponseEntity addProducto(@RequestBody Producto producto){
         service.saveProducto(producto);
         return ResponseEntity.status(201).build();

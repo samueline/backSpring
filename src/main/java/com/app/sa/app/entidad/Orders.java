@@ -5,6 +5,7 @@
 package com.app.sa.app.entidad;
 
 import java.util.Date;
+import java.util.Map;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,32 +16,37 @@ import org.springframework.data.mongodb.core.mapping.Document;
  *
  * @author samue
  */
-@Document(collection = "usuarios")
+@Document(collection = "orders")
+
 @Data
+
 @NoArgsConstructor
 
 @AllArgsConstructor
 
-public class User {
+
+public class Orders {
+  
+
+public static String PENDING = "Pendiente";
+
+public static String APROVED = "Aprobada";
+
+public static String REJECTED = "Rechazada";
+
 @Id
+
 private Integer id;
 
-private String identification;
-private String name;
-private Date birthtDay; 
-private String monthBirthtDay;
-private String address;
+private Date registerDay;
 
-private String cellPhone;
+private String status;
 
-private String email;
+private User salesMan;
 
-private String password;
+private Map<String, Producto> products;
 
-private String zone;
-
-private String type;
-
-   
+private Map<String, Integer> quantities;
 
 }
+
