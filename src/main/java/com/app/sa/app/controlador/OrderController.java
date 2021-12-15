@@ -58,4 +58,17 @@ public class OrderController {
     public List<Orders> findOrderUser(@PathVariable String ZONA){
         return service.getOrderCustomer(ZONA);
     }
+    @GetMapping("/state/{status}/{id}")
+    public List<Orders> findByStatus(@PathVariable("status") String status,@PathVariable("id") Integer id){
+        return service.findByStatus(status, id);
+    }
+    @GetMapping("/salesman/{id}")
+    public List<Orders> findSalesMan(@PathVariable("id") Integer id){
+        return service.findBySales(id);
+    }
+    @GetMapping("/date/{date}/{id}")
+     public List<Orders> findSalesManDate(@PathVariable("date") String date,@PathVariable("id") Integer id){
+        return service.findByDate(date,id);
+    }
+    
 }

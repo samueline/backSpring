@@ -8,6 +8,7 @@ package com.app.sa.app.servicio;
 import com.app.sa.app.entidad.Orders;
 import com.app.sa.app.entidad.User;
 import com.app.sa.app.repositorio.OrderRepository;
+import com.app.sa.app.repositorio.crud.OrderRepositorio;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,6 +27,10 @@ public class OrderService {
     @Autowired
     private OrderRepository repository;
 
+    
+    private OrderRepositorio rep;
+    
+    
     public List<Orders> getAll(){
         return repository.findAll();
     }
@@ -59,4 +64,15 @@ public class OrderService {
          return repository.findByZone(zone);
     }
     
+       public List<Orders> findByStatus(String status, Integer id){
+           return repository.findByStatus(status, id);
+       }
+       public List<Orders> findBySales(Integer id){
+           return repository.findBySalesMan(id);
+       }
+       public List<Orders> findByDate(String date,Integer id){
+           
+           return rep.orderSalesManByDate(date,id);
+       }
+       
 }

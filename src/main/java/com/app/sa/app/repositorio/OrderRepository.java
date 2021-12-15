@@ -21,8 +21,17 @@ public interface OrderRepository  extends MongoRepository<Orders,Integer>{
  @Query("{'salesMan.zone':?0}")
  List<Orders> findByZone(final String country);
  
- @Query("{'status':?0}")
- List<Orders> findByStatus(final String status);
+ @Query("{'status':?0,'salesMan.id':?1}")
+ List<Orders> findByStatus(final String status, Integer id );
+ 
+ @Query("{'salesMan.id':?0}")
+ List<Orders> findBySalesMan(final Integer id );
+  
+ @Query("{'registerDay':/?0/,'salesMan.id':?1")
+ List<Orders> findByDate(final String day, Integer id );
+    
+ 
+  
   
  
 }
